@@ -42,17 +42,17 @@ class Heap:
         for i in range(self.len):
             self.idLocator[nodeList[i].id] = i
         self.Build()
-            
+
     def Exchange(self, i, j):
         t = self.nodeList[i]
         self.nodeList[i] = self.nodeList[j]
         self.nodeList[j] = t
         self.idLocator[self.nodeList[i].id] = i
         self.idLocator[self.nodeList[j].id] = j
-        
+
     def Decrease_Key(self, node, newDist, src):
         if node.isConflicted:
-            return       
+            return
         i = self.idLocator[node.id]
         if newDist > node.dist:
             # relaxation not possible
@@ -65,52 +65,52 @@ class Heap:
                 self.Exchange(i, parent)
                 i = parent
                 parent = Parent(i)
-                
+
     def Pop(self):
         if(self.len == 0):
             return None
         if(self.nodeList[0].isConflicted):
             # print("Pop has seen conflict!!!")
             return None
-        
+
         # Remove the entry from the top of the heap
         nMin = self.nodeList[0]
         self.idLocator[self.nodeList[0].id] = -1
-        
+
         # Put the last node on top of heap and heapify
         self.nodeList[0] = self.nodeList[self.len - 1]
         self.idLocator[self.nodeList[0].id] = 0
         self.len -= 1
         self.Min_Heapify(0)
         return nMin
-        
+
     def Min_Heapify(self, i):
         nMin = self.nodeList[i]
         li = Left(i)
         if(li < self.len):
             if(self.nodeList[li].dist < nMin.dist):
                 nMin = self.nodeList[li]
-                min_i = li                
+                min_i = li
         ri = Right(i)
         if(ri < self.len):
             if(self.nodeList[ri].dist < nMin.dist):
                 nMin = self.nodeList[ri]
-                min_i = ri                
+                min_i = ri
         if(nMin.id != self.nodeList[i].id):
             self.Exchange(i, min_i)
             self.Min_Heapify(min_i)
-            
+
     def Delete(self, node):
         i = self.idLocator[node.id]
         self.nodeList[i].isConflicted = True
         self.nodeList[i].dist = np.inf
         self.Min_Heapify(i)
-        
+
     def Build(self):
         self.len = len(self.nodeList)
         for i in range(int(Parent(self.len - 1)) + 1):
             self.Min_Heapify(i)
-    
+
     def Print(self):
         i = 0
         level = 1
@@ -130,8 +130,6 @@ class Heap:
 ################################################################################################
 """
 def MST(nodelist, WScalarMat, conflicts_Dict, source):
-    # WTF Dude!!! This function should not be used... It is running Prim's on a directed graph!!!
-    # Doesn't return MST
     mst_adj_graph = np.ndarray(WScalarMat.shape, np.bool)*False
     # Reset nodes and put ids
     for id in range(len(nodelist)):
@@ -139,7 +137,7 @@ def MST(nodelist, WScalarMat, conflicts_Dict, source):
         nodelist[id].dist = np.inf
         nodelist[id].isConflicted = False
         nodelist[id].src = -1
-        
+
     # Initialize Graph and min-Heap
     nodelist[source].dist = 0
     for neighbour in range(len(nodelist)):
@@ -147,7 +145,7 @@ def MST(nodelist, WScalarMat, conflicts_Dict, source):
             nodelist[neighbour].dist = WScalarMat[source][neighbour]
             nodelist[neighbour].src = source
     h = Heap(nodelist)
-    
+
     mst_nodes = defaultdict(lambda: [])
     mst_nodes_bool = np.array([False]*len(nodelist))
     # Run MST only until first conflicting node is seen
@@ -177,7 +175,7 @@ def RandomST_GoldOnly(nodelist, WScalarMat, conflicts_Dict, source):
 
     mst_adj_graph = np.zeros_like(mst_adj_graph)
     nodelen = len(nodelist)
-    
+
     ## Random MST
     free_set = list(range(nodelen))
     full_set = list(range(nodelen))
@@ -187,13 +185,13 @@ def RandomST_GoldOnly(nodelist, WScalarMat, conflicts_Dict, source):
     free_set.remove(start_node)
     for x in range(nodelen - 1):
         a = st_set[np.random.randint(len(st_set))]
-        b = free_set[np.random.randint(len(free_set))]        
+        b = free_set[np.random.randint(len(free_set))]
         if b not in st_set:
             st_set.append(b)
             free_set.remove(b)
         mst_adj_graph[a, b] = 1
         # mst_adj_graph[b, a] = 1 # Directed Spanning tree
-    
+
     return (mst_nodes, mst_adj_graph, mst_nodes_bool)
 
 
