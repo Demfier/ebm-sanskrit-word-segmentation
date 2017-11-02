@@ -45,16 +45,16 @@ def Evaluate(result_arr):
             fully_Correct_l += 1
         if word_match == n_dcsWords:
             fully_Correct_w += 1
-    print('Avg. Micro Recall of Lemmas: {}'.format(np.mean(np.array(recalls))))
-    print('Avg. Micro Recall of Words: {}'.format(np.mean(np.array(recalls_of_word))))
-    print('Avg. Micro Precision of Lemmas: {}'.format(np.mean(np.array(precisions))))
-    print('Avg. Micro Precision of Words: {}'.format(np.mean(np.array(precisions_of_words))))
+    print('Avg. Micro Recall of Words: {}'.format(np.mean(np.array(recalls))))
+    print('Avg. Micro Recall of Word++s: {}'.format(np.mean(np.array(recalls_of_word))))
+    print('Avg. Micro Precision of Words: {}'.format(np.mean(np.array(precisions))))
+    print('Avg. Micro Precision of Word++s: {}'.format(np.mean(np.array(precisions_of_words))))
     
     rl = np.mean(np.array(recalls))
     pl = np.mean(np.array(precisions))
-    print('F-Score of Lemmas: ', (2*pl*rl)/(pl+rl))
-    print('Fully Correct Lemmawise: {}'.format(fully_Correct_l/len(recalls_of_word)))
-    print('Fully Correct Wordwise: {}'.format(fully_Correct_w/len(recalls_of_word)))
+    print('F-Score of Wordss: ', (2*pl*rl)/(pl+rl))
+    print('Fully Correct Wordwise: {}'.format(fully_Correct_l/len(recalls_of_word)))
+    print('Fully Correct Word++wise: {}'.format(fully_Correct_w/len(recalls_of_word)))
     print('[{:0.2f}, {:0.2f}, {:0.2f}, {:0.2f}, {:0.2f}, {:0.2f}, {:0.2f}]'.format(100*np.mean(np.array(recalls)), 100*np.mean(np.array(recalls_of_word)), 100*np.mean(np.array(precisions)), \
            100*np.mean(np.array(precisions_of_words)), 100*(2*pl*rl)/(pl+rl), 100*fully_Correct_l/len(recalls_of_word),\
            100*fully_Correct_w/len(recalls_of_word)))
@@ -102,14 +102,14 @@ def main():
     queue = mp.Queue()
     result_arr = []
 
-    print('Source: ', 'wordsegmentation/{}/'.format(ho_folders[tag]))
+    print('Source: ', '../wordsegmentation/{}/'.format(ho_folders[tag]))
     # Start 6 workers - 8 slows down the pc
     # proc_count = 4
     procs = [None]*proc_count
     for i in range(proc_count):
         vpid = i
         procs[i] = mp.Process(target = TestPool_Unit_clique.pooled_Test, args = \
-                              (modelFile, vpid, queue, 'wordsegmentation/{}/'.format(ho_folders[tag]), int(9600/proc_count), _dump, _outFile))
+                              (modelFile, vpid, queue, '../wordsegmentation/{}/'.format(ho_folders[tag]), int(9600/proc_count), _dump, _outFile))
     # Start Processes
     for i in range(proc_count):
         procs[i].start()

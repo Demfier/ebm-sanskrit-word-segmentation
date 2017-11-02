@@ -537,11 +537,11 @@ class Trainer:
         print(dsbz2_name)
         print("NodeLength: "+str(len(nodelist)))
 
-        if(len(nodelist)>40):
-            with open('cliq.csv','a') as fh:
-                rd = csv.writer(fh)
-                rd.writerow([str(dsbz2_name),'0'])
-            return
+        # if(len(nodelist)>40):
+        #     with open('cliq.csv','a') as fh:
+        #         rd = csv.writer(fh)
+        #         rd.writerow([str(dsbz2_name),'0'])
+        #     return
 
         if(len(nodelist)>100):
             print("Nodelength : "+str(len(nodelist)))
@@ -726,14 +726,14 @@ def main():
     # loaded_SKT = pickle.load(open('../Simultaneous_CompatSKT.p', 'rb'), encoding=u'utf-8')
     # loaded_DCS = pickle.load(open('../Simultaneous_DCS.p', 'rb'), encoding=u'utf-8')
 
-    bz2_input_folder = 'wordsegmentation/skt_dcs_DS.bz2_4K_bigram_mir_10K/'  #bm2
-    # bz2_input_folder = '../NewData/skt_dcs_DS.bz2_1L_bigram_mir_10K/'   #bm3
-    # bz2_input_folder = '../NewData/skt_dcs_DS.bz2_4K_bigram_rfe_10K/'   #br2
-    # bz2_input_folder = '../NewData/skt_dcs_DS.bz2_1L_bigram_rfe_10K/'   #br3
-    # bz2_input_folder = '../NewData/skt_dcs_DS.bz2_4K_pmi_mir_10K/'   #pm2
-    # bz2_input_folder = '../NewData/skt_dcs_DS.bz2_1L_pmi_mir_10K2/'   #pm3
-    # bz2_input_folder = '../NewData/skt_dcs_DS.bz2_4K_pmi_rfe_10K/'   #pr2
-    # bz2_input_folder = '../NewData/skt_dcs_DS.bz2_1L_pmi_rfe_10K/'   #pr3    # bz2_input_folder = '/home/rs/15CS91R05/vishnu/Data/skt_dcs_DS.bz2_compat_10k_check_again/'
+    bz2_input_folder = '../wordsegmentation/skt_dcs_DS.bz2_4K_bigram_mir_10K/'  #bm2
+    # bz2_input_folder = '../wordsegmentation/skt_dcs_DS.bz2_1L_bigram_mir_10K/'   #bm3
+    # bz2_input_folder = '../wordsegmentation/skt_dcs_DS.bz2_4K_bigram_rfe_10K/'   #br2
+    # bz2_input_folder = '../wordsegmentation/skt_dcs_DS.bz2_1L_bigram_rfe_10K/'   #br3
+    # bz2_input_folder = '../wordsegmentation/skt_dcs_DS.bz2_4K_pmi_mir_10K/'   #pm2
+    # bz2_input_folder = '../wordsegmentation/skt_dcs_DS.bz2_1L_pmi_mir_10K2/'   #pm3
+    # bz2_input_folder = '../wordsegmentation/skt_dcs_DS.bz2_4K_pmi_rfe_10K/'   #pr2
+    # bz2_input_folder = '../wordsegmentation/skt_dcs_DS.bz2_1L_pmi_rfe_10K/'   #pr3    # bz2_input_folder = '/home/rs/15CS91R05/vishnu/Data/skt_dcs_DS.bz2_compat_10k_check_again/'
     all_files = []
     skipped = 0
     for f in os.listdir(bz2_input_folder):
