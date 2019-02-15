@@ -1,0 +1,8 @@
+odir,p_name,hidden_layer_size,_edge_vector_dim
+outputs/train_t8910478283364,outputs/train_t8910478283364/nnet.p,1200,1500,wordsegmentation/skt_dcs_DS.bz2_4K_bigram_mir_10K/
+outputs/train_t8910591553006,outputs/train_t8910591553006/nnet.p,1200,1500,wordsegmentation/skt_dcs_DS.bz2_4K_bigram_mir_10K/
+outputs/train_t8911603194394,outputs/train_t8911603194394/nnet.p,1200,1500,wordsegmentation/skt_dcs_DS.bz2_4K_bigram_mir_10K/
+outputs/train_t8936290095166,outputs/train_t8936290095166/nnet.p,1200,1500,wordsegmentation/skt_dcs_DS.bz2_4K_bigram_mir_10K/
+outputs/train_t9360928477371,outputs/train_t9360928477371/nnet.p,1200,1500,../wordsegmentation/skt_dcs_DS.bz2_4K_bigram_mir_10K/
+outputs/train_t9557657979896,outputs/train_t9557657979896/nnet.p,1200,1500,../wordsegmentation/skt_dcs_DS.bz2_4K_bigram_mir_10K/
+outputs/train_t50078795761,outputs/train_t50078795761/nnet.p,1200,1500,../wordsegmentation/skt_dcs_DS.bz2_4K_bigram_mir_10K/
