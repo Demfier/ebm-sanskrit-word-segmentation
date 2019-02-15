@@ -1,8 +1,8 @@
-# Word Segmentation in Sanskrit Using Energy Based Models
+# Word Segmentation and Morphological Tagging in Sanskrit Using Energy Based Models
 
-Code for our paper [Free as in Free Word Order: An Energy Based Model for Word Segmentation and Morphological Tagging in Sanskrit](https://arxiv.org/pdf/1809.01446.pdf) accepted at EMNLP 2018, Brussels, Belgium.
+Code for our paper: [Free as in Free Word Order: An Energy Based Model for Word Segmentation and Morphological Tagging in Sanskrit](https://arxiv.org/pdf/1809.01446.pdf), accepted at EMNLP 2018, Brussels, Belgium.
 
-Please find the pre-trained model and other data files distributed on zenodo. [[link]](https://zenodo.org/record/1035413/#.XGZGj7pKhCV)
+Please find the pre-trained model and other data files distributed on zenodo [[link]](https://zenodo.org/record/1035413/#.XGZGj7pKhCV). Some other helper modules too have been provided in this repo inside the `helpers and outdated` folder.
 
 ## Team members:
 Amrith Krishna, Bishal Santra, Sasi Prasanth Bandaru, Gaurav Sahu, Vishnu Dutt Sharma, Pavankumar Satuluri and Pawan Goyal.
@@ -65,3 +65,16 @@ After finishing the testing please run the following command to see the precisio
  
 For example: 
   * python evaluate.py BM2
+  
+## Reference:
+
+If you find any part of our code useful, please cite:
+
+```
+@article{krishna2018free,
+  title={Free as in Free Word Order: An Energy Based Model for Word Segmentation and Morphological Tagging in Sanskrit},
+  author={Krishna, Amrith and Santra, Bishal and Bandaru, Sasi Prasanth and Sahu, Gaurav and Sharma, Vishnu Dutt and Satuluri, Pavankumar and Goyal, Pawan},
+  journal={arXiv preprint arXiv:1809.01446},
+  year={2018}
+}
+```
