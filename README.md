@@ -5,7 +5,7 @@ Code for our paper: [Free as in Free Word Order: An Energy Based Model for Word 
 Please find the pre-trained model and other data files distributed on zenodo [[link]](https://zenodo.org/record/1035413/#.XGZGj7pKhCV). Some other helper modules too have been provided in this repo inside the `helpers and outdated` folder.
 
 ## Team members:
-Amrith Krishna, Bishal Santra, Sasi Prasanth Bandaru, Gaurav Sahu, Vishnu Dutt Sharma, Pavankumar Satuluri and Pawan Goyal.
+[Amrith Krishna](https://github.com/krishnamrith12), [Bishal Santra](https://github.com/bsantraigi), Sasi Prasanth Bandaru, [Gaurav Sahu](https://github.com/demfier), [Vishnu Dutt Sharma](https://github.com/VishnuDuttSharma), Pavankumar Satuluri and [Pawan Goyal](https://github.com/pawangiitkgp).
 
 ## Getting Started
 
@@ -29,9 +29,9 @@ Your working directory should be as follows
 ## Instructions for Training
 Change your current directory to 'dir'
 
-Run the file Train_clique.py by using the following command
+Run the file `Train_clique.py` by using the following command
 
-* python Train_clique.py
+* ```python Train_clique.py```
 
 To train on different input features like BM2,BM3,BR2,BR3,PM2,PM3,PR,PR3 please modify the bz2_input_folder value in the main function before beginning the training.
 
@@ -54,18 +54,18 @@ We only provide the trained model for the feature BM2 which was our best perform
 
 To test with a particular feature vector use the tag of the feature while execution
 
-* python test_clique.py -t <tag>
+* `python test_clique.py -t <tag>`
 
-For example: 
-  * python test_clique.py -t BM2
+For example:
+  * `python test_clique.py -t BM2`
 
 After finishing the testing please run the following command to see the precision and recall values for both the word and word++ prediction tasks
 
-* python evaluate.py <tag>
- 
-For example: 
-  * python evaluate.py BM2
-  
+* `python evaluate.py <tag>`
+
+For example:
+  * `python evaluate.py BM2`
+
 ## Reference:
 
 If you find any part of our code useful, please cite:
