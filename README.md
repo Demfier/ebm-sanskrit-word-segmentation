@@ -1,7 +1,11 @@
 # Word Segmentation in Sanskrit Using Energy Based Models
 
-## Reviewer Copy
-We are in the process of organising the program files.
+Code for our paper [Free as in Free Word Order: An Energy Based Model for Word Segmentation and Morphological Tagging in Sanskrit](https://arxiv.org/pdf/1809.01446.pdf) accepted at EMNLP 2018, Brussels, Belgium.
+
+Please find the pre-trained model and other data files distributed on zenodo. [[link]](https://zenodo.org/record/1035413/#.XGZGj7pKhCV)
+
+## Team members:
+Amrith Krishna, Bishal Santra, Sasi Prasanth Bandaru, Gaurav Sahu, Vishnu Dutt Sharma, Pavankumar Satuluri and Pawan Goyal.
 
 ## Getting Started
 
